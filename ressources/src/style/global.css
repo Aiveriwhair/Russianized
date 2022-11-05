@@ -1,0 +1,203 @@
+:root{
+    --fire-opal: hsla(1, 82%, 66%, 1);
+    --sunray: hsla(37, 70%, 64%, 1);
+    --platinum: hsla(220, 7%, 92%, 1);
+    --alabaster: hsla(55, 15%, 86%, 1);
+    --onyx: hsla(197, 7%, 21%, 1);
+}
+
+*,
+*::after,
+*::before {
+  /* https://css-tricks.com/box-sizing/#universal-box-sizing-with-inheritance */
+  box-sizing: inherit;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    font-display: swap;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: 'FuturaRennerRegular';
+   font-weight: normal;
+   font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+}
+.root{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+/* HEADER */
+header{
+    min-height: 50px;
+    max-height: 90px;
+    height: 8vh;
+    width: 100%;
+    align-items: center;
+    background-color: var(--onyx);
+}
+
+header nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo-title{
+    align-items: center;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.header-title{
+    font-size: 2.1rem;
+}
+
+header img{
+    width: 50px;
+}
+
+.header-nav{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    width: 50%;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header .nav-item{
+    color: var(--platinum);
+}
+header .title{
+    color:var(--platinum)
+}
+header a:hover{
+    color: var(--fire-opal);
+}
+
+/* SIDENAV & BURGER MENU */
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -250px;
+    background-color: var(--onyx);
+    padding-top: 60px;
+    transition: right 0.5s ease;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: var(--fire-opal);
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Active class */
+  .sidenav.active {
+    right: 0;
+  }
+  
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  #openBtn{
+    width: 5%;
+    display: none;
+  }
+  /* Icône burger */
+  .burger-icon span {
+    padding: auto;
+    border-radius: 6px;
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: var(--platinum);
+    margin: 6px 0;
+  }
+  .burger-icon:hover > * {
+    background-color: var(--fire-opal);
+  }
+
+
+/* FOOTER */
+footer{
+    background-color: var(--onyx);
+    min-height: 50px;
+    max-height: 90px;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer nav{
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+.footer-note{
+    color: var(--platinum);
+}
+.copyright{
+    color: var(--platinum);
+}
+.footer-ukr-flag{
+    width: 100px;
+    height: 60%;
+}
+.footer-ukr-flag img{
+    height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-nav{
+        display: none;
+    }
+    .title{
+        display: none;
+    }
+    #openBtn{
+        width: 20%;
+        display: block;
+    }
+}
